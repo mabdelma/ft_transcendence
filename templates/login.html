@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load i18n static %}
+
+
+{% block title %}
+{% trans "Login" %} - My Website
+{% endblock %}
+
+{% block content %}
+<div class="container mt-4 login-form">
+    <h2>{% trans "Login" %}</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">{% trans "Login" %}</button>
+        <a href="{% url 'register' %}" class="btn btn-secondary">{% trans "Register" %}</a>
+    </form>
+</div>
+{% endblock %}
+
+
+
